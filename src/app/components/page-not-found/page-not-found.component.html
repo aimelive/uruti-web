@@ -1,0 +1,31 @@
+<main class="p-10 py-20 mt-20">
+  <div
+    class="bg-[#F6F6F6] p-10 px-12 text-textGrey rounded-lg flex flex-col gap-4 items-center max-w-xl text-center mx-auto"
+  >
+    <h2 class="text-3xl font-bold text-primary">Page Not Found</h2>
+    <!-- <p>
+      The page you're looking for does not exist, go back to home instead to
+      find more interesting content
+    </p> -->
+    <p>The page you're looking for does not exist.</p>
+    <div class="flex w-full">
+      <input
+        placeholder="Search here..."
+        class="p-2 px-4 w-full outline-none text-primary rounded-l"
+      />
+      <button class="bg-primary text-white p-2 px-4 rounded-r">
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </button>
+    </div>
+
+    <div class="flex items-center w-full px-10 py-5 gap-2 text-xs">
+      <div class="border-[0.4px] w-full"></div>
+      <span class="opacity-40">OR</span>
+      <div class="border-[0.4px] w-full"></div>
+    </div>
+
+    <a routerLink="/" class="bg-primary text-white p-2 rounded px-8"
+      >Go to Home</a
+    >
+  </div>
+</main>

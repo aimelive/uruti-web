@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("./assets/font/font.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Outfit";
+  @apply transition-all duration-150;
+}
+
+::-webkit-scrollbar {
+  @apply w-[8px] bg-black;
+}
+
+::-webkit-scrollbar-track {
+  @apply !bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded bg-primary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary bg-opacity-60;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

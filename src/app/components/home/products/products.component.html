@@ -1,0 +1,100 @@
+<section id="products-section" class="max-w-7xl mx-auto py-20">
+  <div class="grid grid-cols-2 gap-10 place-items-center place-content-center">
+    <div class="flex gap-5">
+      <div class="flex flex-col items-center py-2">
+        <div>
+          <div class="w-4 h-4 rounded-full border-2 border-primary"></div>
+        </div>
+        <div class="h-full bg-primary w-0.5"></div>
+      </div>
+      <div>
+        <span class="text-primary">Our works</span>
+        <h2 class="font-semibold text-3xl">
+          We develop products that address issues faced by customers.
+        </h2>
+      </div>
+    </div>
+    <div class="w-full">
+      <div class="flex justify-between gap-10">
+        <button
+          *ngFor="let category of categories"
+          class=" p-3 px-4 rounded-lg w-full  {{
+            selectedCategory === category
+              ? 'bg-black text-white'
+              : 'hover:bg-primary hover:text-white'
+          }}"
+          (click)="onSelectCategory(category)"
+        >
+          {{ category }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 gap-16 py-14">
+    <div *ngFor="let product of [1, 2, 3]" class="flex flex-col gap-3">
+      <div class="rounded-lg overflow-hidden w-full h-96">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/12/03/15/44/fireworks-1880045_1280.jpg"
+          alt="#"
+          class="w-full h-full object-cover cursor-pointer hover:scale-125 hover:opacity-85 duration-300"
+        />
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold">Lorem ipsum</h2>
+        <p class="text-textGrey">UI/UX, Development</p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-end">
+    <button
+      class="p-2.5 px-16 rounded-lg bg-primary text-white flex gap-4 items-center"
+    >
+      <span>Discover More</span>
+      <fa-icon [icon]="faChevron"></fa-icon>
+    </button>
+  </div>
+  <div class="flex gap-8 my-10 mt-20">
+    <div class="flex gap-8 justify-between w-full">
+      <div
+        *ngFor="let item of firstRow"
+        class="flex p-4 px-8 w-full rounded-lg items-center gap-4 bg-[#FAFAFA]"
+      >
+        <div>
+          <img [src]="item.icon" alt="#" />
+        </div>
+        <h1
+          class="text-lg font-semibold"
+          [innerHTML]="sanitizer.bypassSecurityTrustHtml(item.title)"
+        ></h1>
+      </div>
+    </div>
+    <div class="flex flex-col items-center">
+      <div>
+        <div class="w-4 h-4 rounded-full border-2 border-primary"></div>
+      </div>
+      <div class="h-full bg-primary w-0.5"></div>
+    </div>
+  </div>
+  <div class="flex gap-8 mt-10">
+    <div class="flex flex-col items-center">
+      <div class="h-full bg-primary w-0.5"></div>
+      <div>
+        <div class="w-4 h-4 rounded-full border-2 border-primary"></div>
+      </div>
+    </div>
+    <div class="flex gap-8 justify-between w-full">
+      <div
+        *ngFor="let item of secondRow"
+        class="flex p-4 px-8 w-full rounded-lg items-center gap-4 bg-[#FAFAFA]"
+      >
+        <div>
+          <img [src]="item.icon" alt="#" />
+        </div>
+        <h1
+          class="text-lg font-semibold"
+          [innerHTML]="sanitizer.bypassSecurityTrustHtml(item.title)"
+        ></h1>
+      </div>
+    </div>
+  </div>
+</section>

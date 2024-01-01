@@ -1,0 +1,63 @@
+<footer class="bg-black py-12 text-white text-opacity-80">
+  <div class="max-w-7xl mx-auto flex gap-10 justify-between">
+    <div class="flex flex-col gap-5">
+      <div>
+        <a routerLink="/">
+          <img
+            [src]="logoImagePath"
+            width="150"
+            class="transition-all duration-300 hover:scale-110"
+            alt="URUTI_LOGO"
+          />
+        </a>
+      </div>
+      <div class="flex items-center gap-2 hover:text-primary">
+        <fa-icon [icon]="faLocationIcon"></fa-icon>
+        <p>KK 456 st, Gikondo - Kicukiro</p>
+      </div>
+      <div class="flex items-center gap-2 hover:text-primary">
+        <fa-icon [icon]="faClock" (size)="(10)"></fa-icon>
+        <p>Open 9AM to 17 PM</p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h4 class="text-opacity-100 text-white font-semibold">Explore</h4>
+      <a
+        routerLink="{{ item.link }}"
+        *ngFor="let item of menuItems"
+        class="whitespace-nowrap hover:text-primary"
+        >{{ item.title }}</a
+      >
+    </div>
+    <div class="flex flex-col gap-4">
+      <h4 class="text-opacity-100 text-white font-semibold">Portfolio</h4>
+      <div class="flex gap-5">
+        <a
+          href="https://tunganawe.rw/"
+          target="_blank"
+          title="Tunga"
+          *ngFor="let portfolio of [1, 2]"
+          class="w-[120px] h-[105px] hover:opacity-80 overflow-hidden hover:rounded-lg"
+        >
+          <img
+            src="https://tunganawe.rw/products/imodoka.png"
+            width="200"
+            height="200"
+            class="w-full h-full object-cover hover:scale-125"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h4 class="text-opacity-100 text-white font-semibold">Contact</h4>
+      <div class="flex items-center gap-2 hover:text-primary whitespace-nowrap">
+        <fa-icon [icon]="faLocationIcon"></fa-icon>
+        <p>KK 456 st, Gikondo - Kicukiro</p>
+      </div>
+      <div class="flex items-center gap-2 hover:text-primary whitespace-nowrap">
+        <fa-icon [icon]="faClock" (size)="(10)"></fa-icon>
+        <p>Open 9AM to 17 PM</p>
+      </div>
+    </div>
+  </div>
+</footer>

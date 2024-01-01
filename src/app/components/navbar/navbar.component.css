@@ -1,0 +1,6 @@
+.activeLink {
+  @apply font-semibold border-b-[2.5px] border-white py-1.5;
+}
+.activeLink:hover {
+  @apply opacity-100;
+}

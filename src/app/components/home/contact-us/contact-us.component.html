@@ -1,0 +1,81 @@
+<section id="contact-us-section" class="py-16">
+  <h1 class="text-primary text-4xl font-semibold mb-10 text-center">
+    Reach out to us
+  </h1>
+  <div class="max-w-6xl mx-auto flex gap-20">
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center gap-2.5 whitespace-nowrap">
+        <fa-icon [icon]="faPhone" class="text-primary"></fa-icon>
+        <p>
+          If you have an urgent business concern, please contact us at +250 788
+          309 463
+        </p>
+      </div>
+      <div class="flex items-center gap-2.5 whitespace-nowrap">
+        <fa-icon [icon]="faBell" class="text-primary"></fa-icon>
+        <p>
+          Be the first to hear about new releases, announcements, and updates.
+        </p>
+      </div>
+      <h2 class="font-semibold text-lg">Location</h2>
+      <div class="bg-primary rounded overflow-hidden cursor-move">
+        <a
+          href="https://maps.app.goo.gl/X2Q7frCkdgpDt8KB8"
+          target="_blank"
+          title="Click to view map"
+        >
+          <img
+            [src]="mapPhoto"
+            alt="#"
+            class="hover:opacity-90 hover:scale-125 duration-300 w-full h-full object-cover"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="w-full">
+      <div class="flex gap-10">
+        <form class="flex flex-col gap-4 w-full">
+          <input
+            type="text"
+            placeholder="Name"
+            class="p-2.5 bg-[#F6F6F6] outline-none rounded-lg px-4"
+          />
+          <input
+            type="email"
+            placeholder="Your email"
+            class="p-2.5 bg-[#F6F6F6] outline-none rounded-lg px-4"
+          />
+          <textarea
+            class="p-2.5 bg-[#F6F6F6] outline-none rounded-lg px-4 resize-none"
+            rows="5"
+            placeholder="Message"
+          ></textarea>
+          <div class="pt-2">
+            <button
+              type="button"
+              class="p-2.5 bg-primary text-white rounded-lg w-full"
+            >
+              Send message
+            </button>
+          </div>
+        </form>
+        <div class="flex flex-col gap-1">
+          <div class="flex flex-col items-center py-2 h-[99px]">
+            <div>
+              <div class="w-4 h-4 rounded-full border-2 border-primary"></div>
+            </div>
+            <div class="h-full bg-primary w-0.5"></div>
+          </div>
+          <div class="flex flex-col gap-1 items-center">
+            <div
+              *ngFor="let item of socialMedias"
+              class="bg-black text-white p-1 rounded-full w-8 h-8 flex items-center justify-center"
+            >
+              <fa-icon [icon]="item.icon"></fa-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
