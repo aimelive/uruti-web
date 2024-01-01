@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  lowerImage: string = '../assets/images/lower.png';
-  upperImage: string = '../assets/images/upper.png';
+  lowerImage: string = '../assets/images/lower.svg';
+  upperImage: string = '../assets/images/upper.svg';
 }
