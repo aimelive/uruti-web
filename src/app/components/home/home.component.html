@@ -1,9 +1,9 @@
 <app-header></app-header>
 <app-brands></app-brands>
-<div class="px-20">
-  <section id="about-section" class="max-w-7xl mx-auto py-10">
+<div class="px-10 md:px-20">
+  <section id="about-section" class="max-w-7xl mx-auto md:py-10">
     <div
-      class="grid grid-cols-2 gap-10 place-items-center place-content-center"
+      class="grid md:grid-cols-2 gap-10 place-items-center place-content-center"
     >
       <div class="flex gap-5">
         <div class="flex flex-col items-center py-2">
@@ -28,7 +28,7 @@
         </p>
       </div>
     </div>
-    <div class="grid grid-cols-3 gap-10 py-16">
+    <div class="grid md:grid-cols-3 gap-10 py-16">
       <div
         *ngFor="let service of services"
         class="text-center flex flex-col items-center gap-4"
@@ -48,17 +48,21 @@
   class="bg-black bg-cover"
   [ngStyle]="{ 'background-image': 'url(' + bg + ')' }"
 >
-  <div class="bg-black py-24  px-20 text-white bg-opacity-40">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 gap-20 items-center">
+  <div class="bg-black py-16 md:py-24 px-10 md:px-20 text-white bg-opacity-40">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-20 items-center"
+    >
       <div>
-        <h2 class="font-semibold text-3xl">We work by Creative Principles</h2>
+        <h2 class="font-semibold text-3xl text-center md:text-left">
+          We work by Creative Principles
+        </h2>
         <div class="pt-10">
           <div
             *ngFor="let item of principles"
             class="flex gap-4 items-center py-4"
           >
-            <div>
-              <img [src]="item.icon" width="60" alt="#" />
+            <div class="w-40 md:w-auto">
+              <img [src]="item.icon" width="60" class="w-full h-full" alt="#" />
             </div>
             <div>
               <h4 class="text-primary font-semibold text-lg">

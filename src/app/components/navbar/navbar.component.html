@@ -1,5 +1,5 @@
 <nav
-  class="bg-black text-white flex items-center p-6 px-12 justify-between border-b-primary border-b-[3px] border-opacity-15 fixed w-full z-50 top-0"
+  class="bg-black text-white flex items-center p-6 px-10 md:px-12 justify-between border-b-primary border-b-[3px] border-opacity-15 fixed w-full z-50 top-0"
 >
   <div>
     <a routerLink="/">
@@ -11,7 +11,7 @@
       />
     </a>
   </div>
-  <ul class="flex gap-14">
+  <ul class="md:flex gap-14 hidden">
     <li *ngFor="let item of menuItems">
       <a
         routerLink="/{{ item.link }}"
@@ -23,9 +23,38 @@
     <li>
       <a
         routerLink="/"
-        class="bg-primary p-3 rounded-lg px-5 hover:bg-white hover:text-primary"
+        class="bg-primary p-3 rounded-lg px-5 hover:bg-white hover:text-primary whitespace-nowrap"
         >Reach to us</a
       >
     </li>
   </ul>
+
+  <div class="md:hidden">
+    <div
+      id="menu"
+      class="absolute flex-col items-center self-end z-50 hidden py-8 mt-10 space-y-6 font-bold bg-white rounded-md sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+    >
+      <a
+        *ngFor="let item of menuItems"
+        [routerLink]="item.link"
+        class="p-1.5 px-6 rounded uppercase transition-all duration-300 text-primary"
+      >
+        {{ item.title }}
+      </a>
+      <a
+        routerLink="/"
+        class="bg-primary p-3 rounded-lg px-5 hover:bg-white hover:text-primary"
+        >Reach to us</a
+      >
+    </div>
+  </div>
+  <button
+    (click)="handleClickMenu()"
+    id="menu-btn"
+    class="block hamburger md:hidden focus:outline-none"
+  >
+    <span class="hamburger-top bg-white"></span>
+    <span class="hamburger-middle bg-white"></span>
+    <span class="hamburger-bottom bg-white"></span>
+  </button>
 </nav>

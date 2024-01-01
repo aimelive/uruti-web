@@ -2,23 +2,35 @@
   id="header-section"
   class="h-[100vh] w-full bg-black bg-[url('assets/images/image1.png')] bg-cover bg-fixed text-white"
 >
-  <img [src]="lowerImage" class="absolute bottom-0 left-0 select-none" width="270" />
-  <img [src]="upperImage" class="absolute top-0 right-0 select-none" width="270" />
+  <img
+    [src]="lowerImage"
+    class="absolute bottom-0 left-0 select-none w-[150px] md:w-[270px]"
+    width="270"
+  />
+  <img
+    [src]="upperImage"
+    class="absolute top-0 right-0 select-none w-[150px] md:w-[270px]"
+    width="270"
+  />
   <div
     class="flex flex-col items-center justify-center h-full text-center mx-auto p-10 max-w-5xl gap-10"
   >
-    <h1 class="text-primary text-5xl font-semibold">
+    <h1 class="text-primary text-4xl md:text-5xl font-semibold">
       Design and Development Team<br />that is innovative and passionate
     </h1>
-    <p class="text-xl">
+    <p class="text-lg md:text-xl">
       Developers Hub creates trustworthy web-based software solutions. The
       hardworking design and development team is the key to our success. We have
       assisted various businesses in establishing and expanding their digital
       empires.
     </p>
     <div class="flex gap-8">
-      <button class="bg-primary p-3 px-12 rounded-lg">Our Work</button>
-      <button class="border border-primary text-primary p-3 px-12 rounded-lg">
+      <button class="bg-primary p-3 px-12 rounded-lg text-xs md:text-base">
+        Our Work
+      </button>
+      <button
+        class="border border-primary text-primary p-3 px-12 rounded-lg text-xs md:text-base"
+      >
         Reach us
       </button>
     </div>
