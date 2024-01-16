@@ -1,0 +1,93 @@
+<main class="mt-20">
+  <div class="px-20 py-10">
+    <section class="max-w-7xl mx-auto">
+      <div
+        class="grid md:grid-cols-2 gap-10 place-items-center place-content-center"
+      >
+        <div class="flex gap-5">
+          <div class="flex flex-col items-center py-2">
+            <div>
+              <div class="w-4 h-4 rounded-full border-2 border-primary"></div>
+            </div>
+            <div class="h-full bg-primary w-0.5"></div>
+          </div>
+          <div>
+            <span class="text-primary">Our work</span>
+            <h2 class="font-semibold text-3xl">
+              We develop products that address issues faced by customers.
+            </h2>
+          </div>
+        </div>
+        <div>
+          <p class="text-textGrey">
+            Imperdiet in vel pharetra felis adipiscing pharetra pharetra
+            tincidunt. Id diam at lacus nunc arcu. Aliquet duis blandit nibh
+            porttitor. Tempor aenean nibh ultrices mauris ac odio a hac. Sed id
+            pretium vestibulum pellentesque iaculis risus. Dictum tincidunt
+            fermentum pellentesque felis.
+          </p>
+        </div>
+      </div>
+      <div class="my-12">
+        <div class="">
+          <div class="flex justify-start gap-2 md:gap-5">
+            <button
+              *ngFor="let category of categories"
+              class=" p-3 px-16 rounded-lg  {{
+                selectedCategory === category
+                  ? 'bg-black text-white'
+                  : 'hover:bg-primary hover:text-white'
+              }}"
+              (click)="onSelectCategory(category)"
+            >
+              {{ category }}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          *ngFor="let item of [1, 2, 3, 4]"
+          class="grid grid-cols-2 gap-6 mb-14"
+        >
+          <div class="{{ item % 2 === 0 ? 'order-last' : '' }}">
+            <div
+              class="bg-[#E9E9E9] w-full h-full rounded-xl overflow-hidden shadow-sm"
+            >
+              <img
+                src="https://tunganawe.rw/images/preview.png"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col gap-5">
+            <div>
+              <h4>
+                <span class="font-semibold">Client</span>&nbsp;&nbsp;&nbsp;Tunga
+                Nawe
+              </h4>
+            </div>
+            <h3 class="font-semibold">TUNGA NAWE</h3>
+            <p class="text-textGrey">
+              Fusce diam vel tempor cursus viverra. Pellentesque neque semper
+              varius vulputate adipiscing. Congue sollicitudin consequat non
+              vestibulum purus facilisi. Eget nec aliquet ullamcorper
+              condimentum venenatis. Eleifend bibendum accumsan pellentesque
+              morbi. Duis dui id quis nunc amet vitae. Elit posuere nulla mauris
+              nibh risus. Sit odio quis id mollis et. Aliquam ut imperdiet cras
+              diam at tincidunt a volutpat lobortis. Nulla mollis orci at turpis
+              a pulvinar.
+            </p>
+            <p>Discovery , Ui/UX and Development</p>
+            <div class="flex items-center gap-4">
+              <img [src]="figma" loading="lazy" />
+              <img [src]="reactjs" loading="lazy" />
+              <img [src]="nodejs" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-brands></app-brands>
+    </section>
+  </div>
+</main>

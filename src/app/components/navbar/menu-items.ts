@@ -4,15 +4,11 @@ export const MENU_ITEMS: MenuItem[] = [
     link: 'about',
   },
   {
-    title: 'Portfolio',
-    link: 'portfolio',
+    title: 'Our Work',
+    link: 'our-work',
   },
   {
-    title: 'How it works',
-    link: 'how-it-works',
-  },
-  {
-    title: 'Career',
-    link: 'career',
+    title: 'Testimonials',
+    link: '#testimonials-section',
   },
 ];

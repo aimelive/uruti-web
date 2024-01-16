@@ -1,0 +1,184 @@
+<div class="px-20 py-10">
+  <section class="max-w-7xl mx-auto">
+    <div
+      class="grid md:grid-cols-2 gap-10 place-items-center place-content-center"
+    >
+      <div class="flex gap-5">
+        <div class="flex flex-col items-center py-2">
+          <div>
+            <div class="w-4 h-4 rounded-full border-2 border-primary"></div>
+          </div>
+          <div class="h-full bg-primary w-0.5"></div>
+        </div>
+        <div>
+          <span class="text-primary">About</span>
+          <h2 class="font-semibold text-3xl">
+            Design and Development Team that is innovative and passionate
+          </h2>
+        </div>
+      </div>
+      <div>
+        <p class="text-textGrey">
+          Developers Hub creates trustworthy web-based software solutions. The
+          hardworking design and development team is the key to our success. We
+          have assisted various businesses in establishing and expanding their
+          digital empires.
+        </p>
+      </div>
+    </div>
+    <div class="flex gap-10 my-10">
+      <div class="w-full">
+        <div class="w-[768px] h-[386px] overflow-hidden rounded-3xl bg-primary">
+          <img
+            alt="#"
+            [src]="urutihub"
+            width="768"
+            height="386"
+            loading="lazy"
+            class="object-cover w-full h-full hover:scale-125 duration-300 transition-all opacity-95 hover:opacity-100"
+          />
+        </div>
+      </div>
+      <div class="w-full h-[386px] rounded-3xl overflow-hidden bg-primary">
+        <img
+          alt="#"
+          [src]="urutihub2"
+          width="768"
+          height="386"
+          loading="lazy"
+          class="object-cover w-full h-full hover:scale-125 duration-300 transition-all opacity-95 hover:opacity-100"
+        />
+      </div>
+    </div>
+    <div
+      class="bg-black text-white rounded-2xl p-20 flex gap-40 justify-center my-16 relative"
+    >
+      <img
+        [src]="lowerImage"
+        class="absolute bottom-0 left-0 select-none w-[150px] md:w-[140px]"
+        loading="lazy"
+        width="140"
+      />
+      <img
+        [src]="upperImage"
+        class="absolute top-0 right-0 select-none w-[150px] md:w-[140px]"
+        loading="lazy"
+        width="140"
+      />
+      <div class="">
+        <h2 class="text-primary text-2xl mb-4">
+          We have provided software<br />solutions to more than 40+ Clients
+        </h2>
+        <p>
+          We cater to diverse sectors such as E-Commerce, news blogs,<br />fashion,
+          corporate portfolios, fitness, and mechanical parts<br />assembly. Our
+          extensive experience across these fields has<br />significantly
+          contributed to building our esteemed reputation.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-10 gap-x-32">
+        <div *ngFor="let item of [1, 2, 3, 4]">
+          <div class="flex gap-2.5">
+            <div class="flex flex-col items-center py-2">
+              <div>
+                <div class="w-4 h-4 rounded-full border-2 border-primary"></div>
+              </div>
+              <div class="h-full bg-primary w-0.5"></div>
+            </div>
+            <div>
+              <h2 class="mb-1">Projects</h2>
+              <span class="text-primary font-semibold text-3xl">+16</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 place-items-end">
+      <div class="flex gap-5">
+        <div class="flex flex-col items-center py-2">
+          <div>
+            <div class="w-4 h-4 rounded-full border-2 border-primary"></div>
+          </div>
+          <div class="h-full bg-primary w-0.5"></div>
+        </div>
+        <div>
+          <span class="text-primary font-semibold text-3xl"
+            >Life At Uruti Hub</span
+          >
+          <p class="text-textGrey mt-2">
+            Get an exclusive glimpse into our operations, company culture, work
+            environment, and all the elements that contribute to the vibrant
+            life at Uruti hub.
+          </p>
+        </div>
+      </div>
+      <div class="w-full">
+        <div class="flex gap-1 justify-end">
+          <img [src]="arrowLeft" loading="lazy"/> <img [src]="arrowRight" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-8 w-full overflow-x-auto no-scrollbar my-8 px-1.5">
+      <div
+        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+        class="min-w-[400px] w-[400px]"
+      >
+        <img [src]="urutihub" width="500" loading="lazy" />
+      </div>
+    </div>
+    <div>
+      <h1 class="font-semibold text-3xl mt-20">Meet The Team</h1>
+      <div class="grid grid-cols-4 gap-6 gap-y-10 my-10 px-1">
+        <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]" class="">
+          <img
+            [src]="urutihub"
+            width="300"
+            loading="lazy"
+            class="w-full h-[310px] object-cover"
+          />
+          <div class="flex items-center justify-between my-2.5">
+            <div>
+              <h3>David KUBWIMANA</h3>
+              <p class="text-sm mt-0.5 text-[#6D6D6D]">CEO & Mentor</p>
+            </div>
+            <div>
+              <div
+                class="w-7 h-7 bg-black flex items-center justify-center rounded-full"
+              >
+                <fa-icon
+                  [icon]="faLinkedIn"
+                  class="text-white text-sm"
+                ></fa-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<section
+  id="principles-section"
+  class="bg-black bg-cover"
+  [ngStyle]="{ 'background-image': 'url(' + bg + ')' }"
+>
+  <div
+    class="text-white bg-black p-10 py-14 md:py-24 bg-cover w-full md:px-20 bg-opacity-40"
+  >
+    <div class="max-w-7xl mx-auto flex flex-col items-center text-center gap-5">
+      <p class="uppercase text-primary text-lg">
+        Boost Your Career in the Technology Sector
+      </p>
+      <h2 class="text-2xl font-semibold">
+        Enroll in the Developers Hub Team to Engage Yourself<br />in a Dedicated
+        Innovators' Collaborative Community!<br />Let's Build the Solutions of
+        Tomorrow Today.
+      </h2>
+      <button class="bg-primary p-2 px-14 flex items-center gap-3">
+        <span>Enroll</span>
+        <img [src]="arrowUp" loading="lazy" />
+      </button>
+    </div>
+  </div>
+</section>
+<app-contact-us></app-contact-us>
