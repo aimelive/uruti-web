@@ -13,7 +13,7 @@ export class UiService {
     return `../assets/images/${imageName}.${ext}`;
   }
 
-  public gotoSection(hash: string, yOffset: number = -60) {
+  public gotoSection(hash: string, yOffset: number = -90) {
     setTimeout(() => {
       const div = document.getElementById(hash);
       if (!div) return;
