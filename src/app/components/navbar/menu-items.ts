@@ -4,11 +4,7 @@ export const MENU_ITEMS: MenuItem[] = [
     link: 'about',
   },
   {
-    title: 'Our Work',
-    link: 'our-work',
-  },
-  {
-    title: 'Testimonials',
-    link: '#testimonials-section',
+    title: 'Portfolio',
+    link: 'portfolio',
   },
 ];

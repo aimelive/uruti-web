@@ -1,8 +1,46 @@
-<footer class="bg-black py-14 md:py-12 text-white text-opacity-80 px-14">
-  <div
-    class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:flex gap-14 md:gap-10 justify-between"
-  >
-    <div class="flex flex-col gap-5">
+<footer
+  class="bg-black py-14 md:py-12 md:pb-5 text-white text-opacity-80 px-14"
+>
+  <div class="max-w-7xl mx-auto">
+    <div
+      class="p-4 px-0 border-y-[0.5px] border-slate-700 mb-10 flex gap-4 lg:gap-20 sm:justify-center flex-wrap"
+    >
+      <div *ngFor="let item of FOOTER_CONTACTS" class="flex items-center gap-3">
+        <div class="text-primary">
+          <fa-icon [icon]="item.icon"></fa-icon>
+        </div>
+        <span>{{ item.text }}</span>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:flex gap-14 md:gap-10 justify-between">
+      <div *ngFor="let item of FOOTER_ITEMS">
+        <h3 class="text-white mb-4">{{ item.item }}</h3>
+        <ul *ngIf="item.item !== 'CONNECT WITH US'">
+          <li
+            *ngFor="let subItem of item.subItems"
+            class="mb-1.5 flex gap-3 items-center hover:text-white cursor-default"
+          >
+            <div>
+              <fa-icon [icon]="faChevronRight" class="text-xs"></fa-icon>
+            </div>
+            <span>{{ subItem.text }}</span>
+          </li>
+        </ul>
+        <div *ngIf="item.item === 'CONNECT WITH US'">
+          <a
+            *ngFor="let subItem of item.subItems"
+            class="mb-1.5 flex gap-3 items-center hover:text-white cursor-default"
+            href="{{ subItem.link }}"
+            target="_blank"
+          >
+            <div>
+              <fa-icon [icon]="subItem.icon"></fa-icon>
+            </div>
+            <span>{{ subItem.text }}</span>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="flex flex-col gap-5">
       <div>
         <a routerLink="/">
           <img
@@ -62,6 +100,12 @@
         <fa-icon [icon]="faClock" (size)="(10)"></fa-icon>
         <p>Open 9AM to 17 PM</p>
       </div>
+    </div> -->
     </div>
   </div>
 </footer>
+<div
+  class="text-center border-t-[1px] border-t-slate-800 bg-black text-white p-4"
+>
+  <p class="text-sm">Copyright © 2024 | Uruti Hub Ltd | All Rights Reserved.</p>
+</div>

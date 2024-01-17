@@ -1,5 +1,5 @@
 <main class="mt-20">
-  <div class="px-20 py-10">
+  <div class="md:px-20 p-10">
     <section class="max-w-7xl mx-auto">
       <div
         class="grid md:grid-cols-2 gap-10 place-items-center place-content-center"
@@ -12,7 +12,7 @@
             <div class="h-full bg-primary w-0.5"></div>
           </div>
           <div>
-            <span class="text-primary">Our work</span>
+            <span class="text-primary">Our works</span>
             <h2 class="font-semibold text-3xl">
               We develop products that address issues faced by customers.
             </h2>
@@ -30,7 +30,7 @@
       </div>
       <div class="my-12">
         <div class="">
-          <div class="flex justify-start gap-2 md:gap-5">
+          <div class="flex flex-col md:flex-row justify-start gap-2 md:gap-5">
             <button
               *ngFor="let category of categories"
               class=" p-3 px-16 rounded-lg  {{
@@ -48,7 +48,7 @@
       <div>
         <div
           *ngFor="let item of [1, 2, 3, 4]"
-          class="grid grid-cols-2 gap-6 mb-14"
+          class="grid md:grid-cols-2 gap-6 mb-14"
         >
           <div class="{{ item % 2 === 0 ? 'order-last' : '' }}">
             <div

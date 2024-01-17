@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
 import { MENU_ITEMS } from './menu-items';
 import { NgFor } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
+import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +20,19 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class NavbarComponent {
   menuItems: MenuItem[] = MENU_ITEMS;
   logoImagePath: string = '../assets/images/logo.svg';
+
+  constructor(route: Router, router: ActivatedRoute, uiService: UiService) {
+    route.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+    router.fragment.subscribe((fragment) => {
+      if (fragment) {
+        uiService.gotoSection(fragment);
+      }
+    });
+  }
 
   handleClickMenu(): void {
     const btn = document.getElementById('menu-btn');

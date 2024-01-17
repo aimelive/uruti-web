@@ -16,8 +16,8 @@ export const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'our-work',
-    title: 'Our Work',
+    path: 'portfolio',
+    title: 'Portfolio',
     component: OurWorkComponent,
   },
   { path: '**', title: 'Page Not Found', component: PageNotFoundComponent },

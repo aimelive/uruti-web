@@ -1,4 +1,4 @@
-<div class="px-20 py-10">
+<div class="md:px-20 p-10">
   <section class="max-w-7xl mx-auto">
     <div
       class="grid md:grid-cols-2 gap-10 place-items-center place-content-center"
@@ -26,9 +26,9 @@
         </p>
       </div>
     </div>
-    <div class="flex gap-10 my-10">
+    <div class="flex flex-col md:flex-row gap-10 my-10">
       <div class="w-full">
-        <div class="w-[768px] h-[386px] overflow-hidden rounded-3xl bg-primary">
+        <div class="md:w-[768px] h-[386px] overflow-hidden rounded-3xl bg-primary">
           <img
             alt="#"
             [src]="urutihub"
@@ -51,7 +51,7 @@
       </div>
     </div>
     <div
-      class="bg-black text-white rounded-2xl p-20 flex gap-40 justify-center my-16 relative"
+      class="bg-black text-white rounded-2xl p-16 md:p-20 flex flex-col md:flex-row-reverse gap-20 md:gap-40 justify-center my-16 relative"
     >
       <img
         [src]="lowerImage"
@@ -128,7 +128,7 @@
     </div>
     <div>
       <h1 class="font-semibold text-3xl mt-20">Meet The Team</h1>
-      <div class="grid grid-cols-4 gap-6 gap-y-10 my-10 px-1">
+      <div class="grid md:grid-cols-4 gap-6 gap-y-10 my-10 px-1">
         <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]" class="">
           <img
             [src]="urutihub"
