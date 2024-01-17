@@ -34,17 +34,18 @@
       </div>
     </div>
     <div class="grid md:grid-cols-3 gap-8 md:gap-16 py-14">
-      <div *ngFor="let product of [1, 2, 3]" class="flex flex-col gap-3">
+      <div *ngFor="let product of ourWorks" class="flex flex-col gap-3">
         <div class="rounded-lg overflow-hidden w-full md:h-96">
           <img
-            src="https://cdn.pixabay.com/photo/2016/12/03/15/44/fireworks-1880045_1280.jpg"
+            src="{{ product.image }}"
             alt="#"
             class="w-full h-full object-cover cursor-pointer hover:scale-125 hover:opacity-85 duration-300"
+            loading="lazy"
           />
         </div>
         <div>
-          <h2 class="text-2xl font-semibold">Lorem ipsum</h2>
-          <p class="text-textGrey">UI/UX, Development</p>
+          <h2 class="text-2xl font-semibold">{{ product.name }}</h2>
+          <p class="text-textGrey">{{ product.tech }}</p>
         </div>
       </div>
     </div>
@@ -64,7 +65,7 @@
           class="flex p-4 px-8 w-full rounded-lg items-center gap-4 bg-[#FAFAFA]"
         >
           <div>
-            <img [src]="item.icon" alt="#" />
+            <img [src]="item.icon" alt="#" loading="lazy"/>
           </div>
           <h1
             class="text-lg font-semibold"
@@ -92,7 +93,7 @@
           class="flex p-4 px-8 w-full rounded-lg items-center gap-4 bg-[#FAFAFA]"
         >
           <div>
-            <img [src]="item.icon" alt="#" />
+            <img [src]="item.icon" alt="#" loading="lazy"/>
           </div>
           <h1
             class="text-lg font-semibold"

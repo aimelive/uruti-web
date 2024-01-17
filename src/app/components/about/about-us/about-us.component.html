@@ -79,7 +79,7 @@
         </p>
       </div>
       <div class="grid grid-cols-2 gap-10 gap-x-32">
-        <div *ngFor="let item of [1, 2, 3, 4]">
+        <div *ngFor="let item of STATS">
           <div class="flex gap-2.5">
             <div class="flex flex-col items-center py-2">
               <div>
@@ -88,8 +88,10 @@
               <div class="h-full bg-primary w-0.5"></div>
             </div>
             <div>
-              <h2 class="mb-1">Projects</h2>
-              <span class="text-primary font-semibold text-3xl">+16</span>
+              <h2 class="mb-1">{{ item.title }}</h2>
+              <span class="text-primary font-semibold text-3xl"
+                >+{{ item.count }}</span
+              >
             </div>
           </div>
         </div>
@@ -122,37 +124,37 @@
       </div>
     </div>
     <div class="flex gap-8 w-full overflow-x-auto no-scrollbar my-8 px-1.5">
-      <div
-        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-        class="min-w-[400px] w-[400px]"
-      >
+      <div *ngFor="let item of [1, 2, 3, 4]" class="min-w-[400px] w-[400px]">
         <img [src]="urutihub" width="500" loading="lazy" />
       </div>
     </div>
     <div>
       <h1 class="font-semibold text-3xl mt-20">Meet The Team</h1>
       <div class="grid md:grid-cols-4 gap-6 gap-y-10 my-10 px-1">
-        <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]" class="">
+        <div *ngFor="let item of team" class="" id="{{ item.name }}">
           <img
-            [src]="urutihub"
+            [src]="item.picture"
             width="300"
             loading="lazy"
             class="w-full h-[310px] object-cover"
           />
           <div class="flex items-center justify-between my-2.5">
             <div>
-              <h3>David KUBWIMANA</h3>
-              <p class="text-sm mt-0.5 text-[#6D6D6D]">CEO & Mentor</p>
+              <h3>{{ item.name }}</h3>
+              <p class="text-sm mt-0.5 text-[#6D6D6D]">{{ item.title }}</p>
             </div>
             <div>
-              <div
+              <a
+                href="{{ item.linkedin }}"
+                title="{{ item.name }}"
+                target="_blank"
                 class="w-7 h-7 bg-black flex items-center justify-center rounded-full"
               >
                 <fa-icon
                   [icon]="faLinkedIn"
                   class="text-white text-sm"
                 ></fa-icon>
-              </div>
+              </a>
             </div>
           </div>
         </div>

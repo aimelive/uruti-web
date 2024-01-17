@@ -2,7 +2,7 @@
   <h4 class="uppercase font-semibold text-xl">Brands We have worked with</h4>
   <div class="grid grid-cols-2 md:flex justify-center items-center gap-10 p-10">
     <div *ngFor="let brand of brands">
-      <div><img [src]="brand" alt="#" /></div>
+      <div><img [src]="brand" alt="#" loading="lazy"/></div>
     </div>
   </div>
 </section>

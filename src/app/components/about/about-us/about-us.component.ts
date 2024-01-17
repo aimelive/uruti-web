@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { ContactUsComponent } from '../../home/contact-us/contact-us.component';
 import { RouterLink } from '@angular/router';
+import { TEAM } from '../../../../data/team';
 
 @Component({
   selector: 'app-about-us',
@@ -29,4 +30,25 @@ export class AboutUsComponent {
   bg = this.uiService.getImagePath('world');
 
   faLinkedIn = faLinkedinIn;
+
+  team = TEAM;
+
+  STATS = [
+    {
+      title: 'Projects',
+      count: 5,
+    },
+    {
+      title: 'Members',
+      count: 15,
+    },
+    {
+      title: 'Clients',
+      count: 16,
+    },
+    {
+      title: 'Clients',
+      count: 16,
+    },
+  ];
 }

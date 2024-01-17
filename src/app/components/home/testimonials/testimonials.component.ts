@@ -1,6 +1,7 @@
 import { NgFor, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { UiService } from '../../../services/ui.service';
+import { TESTIMONIALS } from '../../../../data/testimonials';
 
 @Component({
   selector: 'app-testimonials',
@@ -16,4 +17,6 @@ export class TestimonialsComponent {
   quote = this.uiService.getIconPath('quote');
 
   activeIndex: number = 0;
+
+  testimonials = TESTIMONIALS;
 }

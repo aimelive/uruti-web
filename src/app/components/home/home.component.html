@@ -33,7 +33,7 @@
         *ngFor="let service of services"
         class="text-center flex flex-col items-center gap-4"
       >
-        <img [src]="service.icon" alt="#" width="60" />
+        <img [src]="service.icon" alt="#" width="60" loading="lazy" />
         <h2 class="text-lg font-semibold">{{ service.title }}</h2>
         <p class="text-textGrey">
           {{ service.description }}
@@ -62,7 +62,13 @@
             class="flex gap-4 items-center py-4"
           >
             <div class="w-40 md:w-auto">
-              <img [src]="item.icon" width="60" class="w-full h-full" alt="#" />
+              <img
+                [src]="item.icon"
+                width="60"
+                class="w-full h-full"
+                alt="#"
+                loading="lazy"
+              />
             </div>
             <div>
               <h4 class="text-primary font-semibold text-lg">
@@ -74,7 +80,7 @@
         </div>
       </div>
       <div>
-        <img [src]="graphic" alt="#" />
+        <img [src]="graphic" alt="#" loading="lazy" />
       </div>
     </div>
   </div>

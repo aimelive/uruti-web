@@ -26,37 +26,36 @@
       <div class="w-full overflow-hidden">
         <div class="flex w-full overflow-x-auto no-scrollbar gap-5 md:gap-10">
           <div
-            *ngFor="let item of [1, 2, 3]"
+            *ngFor="let item of testimonials"
             class="md:min-w-[600px] md:max-w-[600px] min-w-[300px] max-w-[300px] bg-[#1D2125] p-8 md:p-10 md:px-14 rounded-xl flex flex-col gap-6 md:gap-8"
           >
             <div>
               <div class="w-[92px] h-[86px] rounded-2xl overflow-hidden">
                 <img
-                  src="https://cdn.pixabay.com/photo/2017/03/27/13/28/man-2178721_1280.jpg"
+                  [src]="item.picture"
                   alt="#"
+                  loading="lazy"
                   width="100"
                   class="w-full h-full object-cover"
                 />
               </div>
             </div>
             <div class="relative inline-block">
-              <img [src]="quote" alt="#" class="absolute -top-1 -left-6" />
+              <img [src]="quote" alt="#" class="absolute -top-1 -left-6" loading="lazy" />
               <p class="text-gray-300">
-                Tempora expedita et corporis assumenda enim unde molestias.
-                Doloribus doloribus modi consequatur et. Distinctio consequuntur
-                non doloremque. Praesentium deserunt eum vero. Omnis porro quae
-                cum iste voluptas ut accusamus ut et. Aut nam aut nulla.
+                {{ item.testimonial }}
                 <img
                   [src]="quote"
                   alt="#"
+                  loading="lazy"
                   class="inline-block transform rotate-180 absolute bottom-0 ml-2"
                 />
               </p>
             </div>
 
             <div>
-              <p>Christian Mugiraneza</p>
-              <p class="text-textGrey">CEO MUFC</p>
+              <p>{{ item.name }}</p>
+              <p class="text-textGrey">{{ item.title }}</p>
             </div>
           </div>
         </div>

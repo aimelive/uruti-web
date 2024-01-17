@@ -5,6 +5,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { UiService } from '../../../services/ui.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
+import { OUR_WORKS } from '../../../../data/our-work';
 
 @Component({
   selector: 'app-products',
@@ -53,4 +54,6 @@ export class ProductsComponent {
       title: 'Funnel<br/>DrivenLeads',
     },
   ];
+
+  ourWorks = OUR_WORKS;
 }
