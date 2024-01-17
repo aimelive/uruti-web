@@ -28,7 +28,9 @@
     </div>
     <div class="flex flex-col md:flex-row gap-10 my-10">
       <div class="w-full">
-        <div class="md:w-[768px] h-[386px] overflow-hidden rounded-3xl bg-primary">
+        <div
+          class="md:w-[768px] h-[386px] overflow-hidden rounded-3xl bg-primary"
+        >
           <img
             alt="#"
             [src]="urutihub"
@@ -114,7 +116,8 @@
       </div>
       <div class="w-full">
         <div class="flex gap-1 justify-end">
-          <img [src]="arrowLeft" loading="lazy"/> <img [src]="arrowRight" loading="lazy"/>
+          <img [src]="arrowLeft" loading="lazy" />
+          <img [src]="arrowRight" loading="lazy" />
         </div>
       </div>
     </div>
@@ -174,10 +177,14 @@
         Innovators' Collaborative Community!<br />Let's Build the Solutions of
         Tomorrow Today.
       </h2>
-      <button class="bg-primary p-2 px-14 flex items-center gap-3">
+      <a
+        routerLink="/about"
+        fragment="contact-us"
+        class="bg-primary p-2 px-14 flex items-center gap-3"
+      >
         <span>Enroll</span>
         <img [src]="arrowUp" loading="lazy" />
-      </button>
+      </a>
     </div>
   </div>
 </section>

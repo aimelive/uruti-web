@@ -4,11 +4,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { UiService } from '../../../services/ui.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NgFor, FontAwesomeModule],
+  imports: [NgFor, FontAwesomeModule, RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })

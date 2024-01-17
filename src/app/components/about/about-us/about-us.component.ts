@@ -4,11 +4,12 @@ import { NgFor, NgStyle } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { ContactUsComponent } from '../../home/contact-us/contact-us.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [NgFor, FontAwesomeModule, NgStyle, ContactUsComponent],
+  imports: [NgFor, FontAwesomeModule, NgStyle, ContactUsComponent, RouterLink],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css',
 })

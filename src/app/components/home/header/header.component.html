@@ -6,11 +6,13 @@
     [src]="lowerImage"
     class="absolute bottom-0 left-0 select-none w-[150px] md:w-[270px]"
     width="270"
+    loading="lazy"
   />
   <img
     [src]="upperImage"
     class="absolute top-0 right-0 select-none w-[150px] md:w-[270px]"
     width="270"
+    loading="lazy"
   />
   <div
     class="flex flex-col items-center justify-center h-full text-center mx-auto p-10 max-w-5xl gap-10"
@@ -25,14 +27,19 @@
       empires.
     </p>
     <div class="flex gap-8">
-      <button class="bg-primary p-3 px-12 rounded-lg text-xs md:text-base">
+      <a
+        routerLink="portfolio"
+        class="bg-primary p-3 px-12 rounded-lg text-xs md:text-base"
+      >
         Our Work
-      </button>
-      <button
+      </a>
+      <a
+        routerLink="/"
+        fragment="contact-us"
         class="border border-primary text-primary p-3 px-12 rounded-lg text-xs md:text-base"
       >
         Reach us
-      </button>
+      </a>
     </div>
   </div>
 </header>
