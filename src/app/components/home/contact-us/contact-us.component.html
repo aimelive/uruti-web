@@ -38,28 +38,35 @@
     </div>
     <div class="w-full">
       <div class="flex flex-col md:flex-row gap-10">
-        <form class="flex flex-col gap-4 w-full">
+        <form class="flex flex-col gap-4 w-full" (submit)="sendEmail($event)">
           <input
             type="text"
             placeholder="Name"
+            name="user_name"
             class="p-2.5 bg-[#F6F6F6] outline-none rounded-lg px-4"
+            required
           />
           <input
             type="email"
             placeholder="Your email"
+            name="user_email"
             class="p-2.5 bg-[#F6F6F6] outline-none rounded-lg px-4"
+            required
           />
           <textarea
             class="p-2.5 bg-[#F6F6F6] outline-none rounded-lg px-4 resize-none"
             rows="6"
             placeholder="Message"
+            name="message"
+            required
           ></textarea>
           <div class="pt-2">
             <button
-              type="button"
+              type="submit"
+              [disabled]="loading"
               class="p-2.5 bg-primary text-white rounded-lg w-full"
             >
-              Send message
+              {{ loading ? "Sending..." : "Send message" }}
             </button>
           </div>
         </form>
