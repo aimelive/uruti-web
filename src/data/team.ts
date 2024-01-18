@@ -9,14 +9,13 @@ export const TEAM = [
   {
     name: 'KEZA Raissa',
     title: 'Project Manager',
-    picture:
-      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+    picture: 'https://i.imgur.com/vnY6kW4.jpg',
     linkedin: 'https://www.linkedin.com/in/raissa-keza-9b1b09291',
   },
   {
     name: 'Rachel NYINAWABEGA',
     title: 'Assistant Manager',
-    picture: 'https://i.imgur.com/zIfYl3j.jpeg',
+    picture: 'https://i.imgur.com/Ldp4sbV.jpg',
     linkedin: 'https://www.linkedin.com/in/rachel-nyinawabega-a75ab9186/',
   },
   {
