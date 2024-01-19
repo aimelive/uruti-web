@@ -9,7 +9,7 @@ export const TEAM = [
   {
     name: 'KEZA Raissa',
     title: 'Project Manager',
-    picture: 'https://i.imgur.com/vnY6kW4.jpg',
+    picture: 'https://i.imgur.com/2kQWJq5.jpg',
     linkedin: 'https://www.linkedin.com/in/raissa-keza-9b1b09291',
   },
   {
