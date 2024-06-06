@@ -32,7 +32,7 @@
             <div>
               <div class="w-[92px] h-[86px] rounded-2xl overflow-hidden">
                 <img
-                  [src]="item.picture"
+                  [src]="item.imageUrl"
                   alt="#"
                   loading="lazy"
                   width="100"
@@ -41,9 +41,14 @@
               </div>
             </div>
             <div class="relative inline-block">
-              <img [src]="quote" alt="#" class="absolute -top-1 -left-6" loading="lazy" />
+              <img
+                [src]="quote"
+                alt="#"
+                class="absolute -top-1 -left-6"
+                loading="lazy"
+              />
               <p class="text-gray-300">
-                {{ item.testimonial }}
+                {{ item.testimony }}
                 <img
                   [src]="quote"
                   alt="#"

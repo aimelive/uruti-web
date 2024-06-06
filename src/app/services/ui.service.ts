@@ -21,4 +21,13 @@ export class UiService {
       window.scrollTo({ top: y, behavior: 'smooth' });
     }, 100);
   }
+
+  //
+  formatTags(tags: string[]) {
+    const str = tags.join(', ');
+    const lastCommaIndex = str.lastIndexOf(',');
+    const modifiedStr =
+      str.slice(0, lastCommaIndex) + ' and' + str.slice(lastCommaIndex + 1);
+    return modifiedStr;
+  }
 }

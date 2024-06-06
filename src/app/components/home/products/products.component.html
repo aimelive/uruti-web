@@ -33,19 +33,23 @@
         </div>
       </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-8 md:gap-16 py-14">
-      <div *ngFor="let product of ourWorks" class="flex flex-col gap-3">
+    <div class="grid md:grid-cols-3 gap-8 md:gap-16 py-14 relative">
+       <div
+          class="bg-primary/5 absolute w-full h-full min-h-64 backdrop-blur-sm"
+          *ngIf="loading"
+        ></div>
+      <div *ngFor="let product of projects" class="flex flex-col gap-3">
         <div class="rounded-lg overflow-hidden w-full md:h-96">
           <img
-            src="{{ product.image }}"
+            src="{{ product.imageUrl }}"
             alt="#"
             class="w-full h-full object-cover cursor-pointer hover:scale-125 hover:opacity-85 duration-300"
             loading="lazy"
           />
         </div>
         <div>
-          <h2 class="text-2xl font-semibold">{{ product.name }}</h2>
-          <p class="text-textGrey">{{ product.tech }}</p>
+          <h2 class="text-2xl font-semibold">{{ product.title }}</h2>
+          <p class="text-textGrey">{{ uiService.formatTags(product.tags) }}</p>
         </div>
       </div>
     </div>

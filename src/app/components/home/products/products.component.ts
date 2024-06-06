@@ -1,29 +1,36 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { UiService } from '../../../services/ui.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
-import { OUR_WORKS } from '../../../../data/our-work';
+import { SanityService } from '../../../services/sanity.service';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NgFor, FontAwesomeModule, RouterLink],
+  imports: [NgFor, FontAwesomeModule, RouterLink, NgIf],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
   faChevron = faChevronRight;
   // ----------------------------------------------------------------
   categories: string[] = ['Websites', 'Mobile', 'UI/UX'];
   selectedCategory: string = this.categories[0];
+  loading: boolean = false;
+  projects: Project[] = [];
 
-  constructor(public uiService: UiService, public sanitizer: DomSanitizer) {}
+  constructor(
+    public uiService: UiService,
+    public sanitizer: DomSanitizer,
+    private sanityService: SanityService
+  ) {}
 
   onSelectCategory = (category: string) => {
     this.selectedCategory = category;
+    this.fetchProjects(this.selectedCategory);
   };
 
   firstRow = [
@@ -54,6 +61,22 @@ export class ProductsComponent {
       title: 'Funnel<br/>DrivenLeads',
     },
   ];
+  //
+  ngOnInit() {
+    this.fetchProjects(this.selectedCategory);
+  }
 
-  ourWorks = OUR_WORKS;
+  //
+  async fetchProjects(category: string) {
+    const query = `*[_type == "project" && category == "${category.toLowerCase()}"] {
+    title,
+    tags,
+    "imageUrl": image.asset->url,
+    link,
+}`;
+
+    this.loading = true;
+    this.projects = await this.sanityService.fetch(query);
+    this.loading = false;
+  }
 }

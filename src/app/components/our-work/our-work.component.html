@@ -45,44 +45,65 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="relative">
         <div
-          *ngFor="let item of [1, 2, 3, 4]"
+          class="bg-primary/5 absolute w-full h-full min-h-64 backdrop-blur-sm"
+          *ngIf="loading"
+        ></div>
+        <div
+          *ngFor="let item of projects; index as i"
           class="grid md:grid-cols-2 gap-6 mb-14"
         >
-          <div class="{{ item % 2 === 0 ? 'order-last' : '' }}">
+          <div class="{{ i % 2 === 0 ? 'order-last' : '' }}">
             <div
-              class="bg-[#E9E9E9] w-full h-full rounded-xl overflow-hidden shadow-sm"
+              class="bg-[#E9E9E9] w-full h-[400px] lg:h-[350px] rounded-xl overflow-hidden shadow-sm hover:border-primary duration-300 hover:shadow-lg"
             >
-              <img
-                src="https://tunganawe.rw/images/preview.png"
-                loading="lazy"
-              />
+              <a [href]="item.link" target="_blank" [title]="item.title">
+                <img
+                  [src]="item.imageUrl"
+                  loading="lazy"
+                  [alt]="item.title"
+                  width="500"
+                  height="200"
+                  class="w-full h-full object-contain hover:scale-125 duration-300"
+                />
+              </a>
             </div>
           </div>
           <div class="flex flex-col gap-5">
             <div>
               <h4>
-                <span class="font-semibold">Client</span>&nbsp;&nbsp;&nbsp;Tunga
-                Nawe
+                <span class="font-semibold">Client</span>&nbsp;&nbsp;&nbsp;{{
+                  item.clientName
+                }}
               </h4>
             </div>
-            <h3 class="font-semibold">TUNGA NAWE</h3>
+            <h3 class="font-semibold">
+              <a
+                [href]="item.link"
+                target="_blank"
+                [title]="item.title"
+                class="hover:underline"
+                >{{ item.title }}</a
+              >
+            </h3>
             <p class="text-textGrey">
-              Fusce diam vel tempor cursus viverra. Pellentesque neque semper
-              varius vulputate adipiscing. Congue sollicitudin consequat non
-              vestibulum purus facilisi. Eget nec aliquet ullamcorper
-              condimentum venenatis. Eleifend bibendum accumsan pellentesque
-              morbi. Duis dui id quis nunc amet vitae. Elit posuere nulla mauris
-              nibh risus. Sit odio quis id mollis et. Aliquam ut imperdiet cras
-              diam at tincidunt a volutpat lobortis. Nulla mollis orci at turpis
-              a pulvinar.
+              {{ item.description }}
             </p>
-            <p>Discovery , Ui/UX and Development</p>
+            <p>
+              {{ uiService.formatTags(item.tags) }}
+            </p>
             <div class="flex items-center gap-4">
-              <img [src]="figma" loading="lazy" />
-              <img [src]="reactjs" loading="lazy" />
-              <img [src]="nodejs" loading="lazy" />
+              <div *ngFor="let stack of item.techStacksUsed">
+                <img
+                  [ngSrc]="uiService.getIconPath(stack)"
+                  loading="lazy"
+                  alt="figma"
+                  width="40"
+                  height="40"
+                  class="w-full h-full"
+                />
+              </div>
             </div>
           </div>
         </div>
