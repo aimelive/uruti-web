@@ -13,6 +13,10 @@
   @apply w-[8px] bg-black;
 }
 
+.messages-container::-webkit-scrollbar {
+  @apply !bg-transparent;
+}
+
 ::-webkit-scrollbar-track {
   @apply !bg-transparent;
 }
