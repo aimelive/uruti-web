@@ -28,8 +28,8 @@ WORKDIR /app
 # Copy built app from builder stage
 COPY --from=builder /app/dist/uruti-web/browser ./dist
 
-# Expose port 3000
-EXPOSE 3000
+# Expose port 4200
+EXPOSE 4200
 
 # Start static server
-CMD ["serve", "-s", "dist", "-l", "3000"] 
+CMD ["serve", "-s", "dist", "-l", "4200"] 

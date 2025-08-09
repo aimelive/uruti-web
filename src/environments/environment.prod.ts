@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  chatbotUrl: 'http://localhost:8080/api/chatbot',
+  chatbotUrl: 'https://urutibot-be.aimelive.com/api/chatbot',
 };
